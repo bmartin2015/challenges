@@ -12,7 +12,7 @@
       padding: 50px;
       background-color: #EEE;
     }
-    #container h1 {
+    #container h3 {
       font-size: 48px;
       font-family: sans-serif;
       color: #0080A8;
@@ -22,9 +22,16 @@
 <body>
   <div id="container"></div>
   <script type="text/babel">
+    var destination = document.querySelector("#container");
+     
     ReactDOM.render(
-      <h1>Benjamin Martin</h1>,
-      document.querySelector("#container")
+      <div>
+        <h3><i>Batman</i></h3>
+        <h3><i>Iron Man</i></h3>
+        <h3><i>Nicolas Cage</i></h3>
+        <h3><i>Mega Man</i></h3>
+      </div>,
+      destination
     );
   </script>
 </body>
