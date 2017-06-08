@@ -13,19 +13,36 @@
     var HelloWorld = React.createClass({
       render: function() {
         return(
-          <p>Hello, world!</p>
+          <p>Hello, {this.props.greetTarget}!</p>
+        );
+      }
+    });
+
+    var Buttonify = React.createClass({
+      render: function() {
+        return(
+          <div>
+            <button type={this.props.behavior}>{this.props.children}</button>
+          </div>
         );
       }
     });
 
     ReactDOM.render(
       <div>
-        <HelloWorld />
-        <HelloWorld/>
-        <HelloWorld/>
-        <HelloWorld/>
-        <HelloWorld/>
-        <HelloWorld/>
+        <HelloWorld greetTarget="Batman"/>
+        <HelloWorld greetTarget="Iron Man"/>
+        <HelloWorld greetTarget="Nicolas Cage"/>
+        <HelloWorld greetTarget="Mega Man"/>
+        <HelloWorld greetTarget="Bono"/>
+        <HelloWorld greetTarget="Catwoman"/>
+      </div>,
+      document.querySelector("#container")
+    );
+
+    ReactDOM.render(
+      <div>
+        <Buttonify behavior="Submit">SEND DATA</Buttonify>
       </div>,
       document.querySelector("#container")
     );
